@@ -1,0 +1,81 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true,
+        "jest/globals": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "extends": [
+        "eslint:recommended",
+        "airbnb"
+    ],
+    "plugins": [
+        "babel",
+        "jest"
+    ],
+    "rules": {
+        "linebreak-style": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "react/prop-types": [
+            "skipUndeclared"
+        ],
+        "react/react-in-jsx-scope": [
+            "disabled"
+        ],
+        "import/extensions": [
+            "error",
+            {
+                "js": "ignorePackages"
+            }
+        ],
+        "import/no-named-as-default": "off",
+        "react/no-multi-comp": "disabled",
+        "no-console": "off",
+        "no-alert": "off",
+        "one-var": "off",
+        "no-restricted-globals": "off",
+        "arrow-parens": [
+            "warn",
+            "always"
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "no-case-declarations": "off",
+        "jsx-a11y/anchor-is-valid": [
+            "error",
+            {
+                "components": [
+                    "Link"
+                ],
+                "specialLink": [
+                    "to",
+                    "hrefLeft",
+                    "hrefRight"
+                ],
+                "aspects": [
+                    "noHref",
+                    "invalidHref",
+                    "preferButton"
+                ]
+            }
+        ]
+    }
+}
