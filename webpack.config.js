@@ -5,7 +5,6 @@ module.exports = (env) => {
   const isProduction = env === 'production';
   const CSSExtract = new ExtractTextPlugin('styles.css');
 
-  console.log('env', env);
   return {
     mode: 'development',
     entry: './src/app.js',
@@ -18,8 +17,7 @@ module.exports = (env) => {
         loader: 'babel-loader',
         test: /\.js$/,
         exclude: /node_modules/
-      },
-      {
+      }, {
         test: /\.s?css$/,
         use: CSSExtract.extract({
           use: [

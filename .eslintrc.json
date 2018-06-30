@@ -44,11 +44,24 @@
                 "js": "ignorePackages"
             }
         ],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": true,
+                "optionalDependencies": false,
+                "peerDependencies": false
+            }
+        ],
         "import/no-named-as-default": "off",
+        "react/button-has-type": "off",
         "react/no-multi-comp": "disabled",
+        "react/destructuring-assignment": "disabled",
+        "react/jsx-indent": [2,2],
+        "react/jsx-one-expression-per-line": "disabled",
         "no-console": "off",
         "no-alert": "off",
         "one-var": "off",
+        "one-var-declaration-per-line": "off",
         "no-restricted-globals": "off",
         "arrow-parens": [
             "warn",
@@ -76,6 +89,7 @@
                     "preferButton"
                 ]
             }
-        ]
+        ],
+        "jsx-a11y/no-autofocus": "off"
     }
 }

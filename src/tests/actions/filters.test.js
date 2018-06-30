@@ -2,9 +2,9 @@ import moment from 'moment';
 import {
   setStartDate,
   setEndDate,
+  setTextFilter,
   sortByAmount,
-  sortByDate,
-  setTextFilter
+  sortByDate
 } from '../../actions/filters';
 
 test('should generate set start date action object', () => {
@@ -15,7 +15,7 @@ test('should generate set start date action object', () => {
   });
 });
 
-test('should generate set end date action object', () => {
+test('should generate set end date aciton object', () => {
   const action = setEndDate(moment(0));
   expect(action).toEqual({
     type: 'SET_END_DATE',
@@ -23,21 +23,16 @@ test('should generate set end date action object', () => {
   });
 });
 
-test('should generate sort by amount action object', () => {
-  const action = sortByAmount();
+test('should generate set text filter object with text value', () => {
+  const text = 'Something in';
+  const action = setTextFilter(text);
   expect(action).toEqual({
-    type: 'SORT_BY_AMOUNT'
+    type: 'SET_TEXT_FILTER',
+    text
   });
 });
 
-test('should generate sort by date action object', () => {
-  const action = sortByDate();
-  expect(action).toEqual({
-    type: 'SORT_BY_DATE'
-  });
-});
-
-test('should generate set default text filter action object', () => {
+test('should generate set text filter object with default', () => {
   const action = setTextFilter();
   expect(action).toEqual({
     type: 'SET_TEXT_FILTER',
@@ -45,11 +40,10 @@ test('should generate set default text filter action object', () => {
   });
 });
 
-test('should generate set provided text filter action object', () => {
-  const text = 'test text filter';
-  const action = setTextFilter(text);
-  expect(action).toEqual({
-    type: 'SET_TEXT_FILTER',
-    text
-  });
+test('should generate action object for sort by date', () => {
+  expect(sortByDate()).toEqual({ type: 'SORT_BY_DATE' });
+});
+
+test('should generate action object for sort by amount', () => {
+  expect(sortByAmount()).toEqual({ type: 'SORT_BY_AMOUNT' });
 });

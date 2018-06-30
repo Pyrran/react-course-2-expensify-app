@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-// Filters Reducers
+// Filters Reducer
 
 const filtersReducerDefaultState = {
   text: '',

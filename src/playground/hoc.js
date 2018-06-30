@@ -14,37 +14,29 @@ const Info = (props) => (
   </div>
 );
 
-const withAdminWarning = (WrappedComponent) => (props) => (
-  <div>
-    {props.isAdmin && <p>This is private info. Please don't share!</p>}
-    <WrappedComponent {...props} />
-  </div>
-);
+const withAdminWarning = (WrappedComponent) => {
+  return (props) => (
+    <div>
+      {props.isAdmin && <p>This is private info. Please don't share!</p>}
+      <WrappedComponent {...props} />
+    </div>
+  );
+};
 
-const requireAuthentication = (WrappedComponent) => (props) => (
-  <div>
-    {props.isAuthenticated ? (
-      <div>
-        <p>You are an authorised user.</p>
+const requireAuthentication = (WrappedComponent) => {
+  return (props) => (
+    <div>
+      {props.isAuthenticated ? (
         <WrappedComponent {...props} />
-      </div>)
-      :
-      (
-        <div>
-          <p>You are NOT authorised!</p>
-        </div>
-      )
-    }
-  </div>
-);
-
-
-// requireAuthentication
+      ) : (
+          <p>Please login to view the info</p>
+        )}
+    </div>
+  );
+};
 
 const AdminInfo = withAdminWarning(Info);
 const AuthInfo = requireAuthentication(Info);
 
-
-// ReactDOM.render(<AdminInfo isAdmin info="There are the details" />,
-//   document.getElementById('app'));
-ReactDOM.render(<AuthInfo isAuthenticated info="There are the details" />, document.getElementById('app'));
+// ReactDOM.render(<AdminInfo isAdmin={true} info="There are the details" />, document.getElementById('app'));
+ReactDOM.render(<AuthInfo isAuthenticated={true} info="There are the details" />, document.getElementById('app'));
