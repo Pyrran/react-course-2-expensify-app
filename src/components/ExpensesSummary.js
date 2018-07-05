@@ -9,11 +9,11 @@ export const ExpensesSummary = (props) => {
   const expensesTotalValue = expensesTotal(props.expenses);
   return (
     <div>
-      <p>
+      <h1>
         {`Viewing ${expensesCount} `}
         {expensesCount === 1 ? 'expense' : 'expenses'}
         {` totalling ${numeral(expensesTotalValue).format('$0,0.00')}`}
-      </p>
+      </h1>
     </div>
   );
 };
