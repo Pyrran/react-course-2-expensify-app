@@ -38,6 +38,7 @@
         "react/react-in-jsx-scope": [
             "disabled"
         ],
+        "implicit-arrow-linebreak":"off",
         "import/extensions": [
             "error",
             {
@@ -53,6 +54,7 @@
             }
         ],
         "import/no-named-as-default": "off",
+        "import/prefer-default-export":"off",
         "react/button-has-type": "off",
         "react/no-multi-comp": "disabled",
         "react/destructuring-assignment": "disabled",

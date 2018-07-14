@@ -1,6 +1,6 @@
+import moment from 'moment';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
 import numeral from 'numeral';
 
 numeral.register('locale', 'gb', {
